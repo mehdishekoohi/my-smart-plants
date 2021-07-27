@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plants Report</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 1;
+        width: 80%;
+        border: 5px solid #ddd;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 16px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>My Home Plants Report </h1>
+    <table class="center">
+    <tr>
+      <th>Plant Name</th>
+      <th>Plant Location</th>
+      <th>Moisture Value</th>
+      <th>Happy Meter!</th>
+    </tr>
+    <tr>
+      <td>Rosa</td>
+      <td>Guest Room</td>
+      <td>{{current_value}}</td>
+      <td><img src="{{ url_for('static', filename = image_filename) }}"></td>
+    </tr>
+    </table>
+  </body>
+</html>
