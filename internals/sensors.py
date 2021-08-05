@@ -18,5 +18,12 @@ def get_data():
         data = 0
         pass
     if data:
-        return int(data)
+        values = []
+        values_tmp = data.split(",")
+        for value in values_tmp:
+            try:
+                values.append(int(value))
+            except ValueError:
+                pass
+        return values
 

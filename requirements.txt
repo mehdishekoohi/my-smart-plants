@@ -1,2 +1,6 @@
 sendgrid
 requests
+pyserial
+plivo
+flask
+apscheduler
