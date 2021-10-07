@@ -1,17 +1,20 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
-from internals.sensors import get_data
 from datetime import datetime
+from internals.sensors import get_sensors_data
+from internals.constants import plants_list
+
+
+from time import sleep
+
 
 date_format = '%A %B %d, %Y %H:%M:%S'
-moisture_alarm = 500
+moisture_alarm = 50
 
 
 def get_values(date_format):
+    values = get_sensors_data()
     formatted_date = datetime.now().strftime(date_format)
-    print(f'{formatted_date} >>> {get_data()}')
-
-    plants_list = [{'name': 'a0', 'value': get_data()[0]},
-                   {'name': 'a1', 'value': get_data()[1]}]
+    print(f'{formatted_date} >>> {values}')
 
     dry_plants = []
     for i, plant in enumerate(plants_list):
