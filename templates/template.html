@@ -25,17 +25,22 @@
   <h1>My Home Plants Report </h1>
     <table class="center">
     <tr>
+      <th>Sensor Index</th>
       <th>Plant Name</th>
       <th>Plant Location</th>
       <th>Moisture Value</th>
       <th>Happy Meter!</th>
     </tr>
-    <tr>
-      <td>Rosa</td>
-      <td>Guest Room</td>
-      <td>{{current_value}}</td>
-      <td><img src="{{ url_for('static', filename = image_filename) }}"></td>
-    </tr>
+      {% for plant in plants %}
+      <tr>
+        <td>{{plant['index']}}</td>>
+        <td>{{plant['name']}}</td>
+        <td>{{plant['location']}}</td>
+        <td>{{ plant['value'] }}</td>
+        <td><img src="{{ url_for('static', filename = plant['image']) }}"></td>
+      </tr>
+    {% endfor %}
+
     </table>
   </body>
 </html>

@@ -1,6 +1,6 @@
 .venv
 .idea
-.config
 */__pycache__/
 *.pyc
 tmp.py
+sendgrid.env

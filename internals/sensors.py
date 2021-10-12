@@ -30,4 +30,7 @@ def get_sensors_data() -> dict:
 
 
 def get_sensor_value(sensors_data, sensor_index):
-    return sensors_data[str(sensor_index)]
+    try:
+        return sensors_data[str(sensor_index)]
+    except KeyError:
+        print('Send valid sensor index')
