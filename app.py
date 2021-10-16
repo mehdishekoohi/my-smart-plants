@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request
 from internals.sensors import get_sensor_value, get_sensors_data
-from internals.utils import get_current_status
+from internals.utils import get_current_status, get_plants_complete_stats
 from internals.constants import my_plants
 
 
@@ -15,13 +15,8 @@ def home():
 @app.route("/plants")
 def plants():
     values = {'0': 110, '1': 10, '2': 4, '3': 55, '4': 80}
-    for index in values.keys():
-        for p in my_plants:
-            if p['index'] == index:
-                current_value, image_filename = get_current_status(values=values, sensor_index=index)
-                p['value'] = current_value
-                p['image'] = image_filename
-    return render_template('template.html', plants=my_plants)
+    plants_stats = get_plants_complete_stats(values=values, plants_list=my_plants)
+    return render_template('template.html', plants=plants_stats)
 
 
 @app.route("/plant")
