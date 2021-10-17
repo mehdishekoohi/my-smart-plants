@@ -4,9 +4,9 @@ from datetime import datetime
 import random
 
 
-def generate_random_values():
+def generate_random_values(sensors_number: int):
     values = {}
-    for i in range(0, 6):
+    for i in range(0, sensors_number + 1):
         values[str(i)] = random.randint(0, 100)
     return values
 
