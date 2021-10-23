@@ -3,8 +3,6 @@ from sendgrid.helpers.mail import Mail
 import os
 
 api_key = os.getenv('SENDGRID_API_KEY')
-# api_key ='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'
-
 
 if not api_key:
     print('"api_key" is not exported. Use export SENDGRID_API_KEY="<YOUR-SENDGRID-API-KEY>"')
