@@ -1,11 +1,12 @@
-from flask import Flask, render_template, url_for, request
-from internals.sensors import get_sensor_value, get_sensors_data
-from internals.utils import get_current_status, get_plants_complete_stats, \
-    get_plants_name_from_csv, get_values_percentage, get_ip
+from flask import Flask, render_template, request
+from internals.sensors import get_sensors_data
+from internals.utils import get_plants_complete_stats, get_plants_name_from_csv, get_values_percentage, get_ip
 from internals.constants import plants_csv
-from internals.utils import generate_random_values
 
 my_plants = get_plants_name_from_csv(plants_csv)
+host_ip = get_ip()
+
+print(f'Running app on "http://{host_ip}":5000')
 
 app = Flask(__name__)
 
@@ -28,10 +29,8 @@ def plants():
 @app.route("/plant")
 def plant():
     sensor_index = request.args.get('index', default=0, type=int)
-    values = generate_random_values(sensors_number=5)
-    # values = get_sensors_data()
-    current_value, image_filename = get_current_status(values=values, sensor_index=sensor_index)
-    return render_template('template.html', current_value=current_value, image_filename=image_filename)
+    # todo
+    pass
 
 
 if __name__ == '__main__':

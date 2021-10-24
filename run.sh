@@ -30,7 +30,7 @@ elif [ "$1" == 'start-webapp' ]; then
   MACHINE_IP=$(hostname -I | cut -d' ' -f1)
   echo -e "\nCTRL+Click http://${MACHINE_IP}:5000 to see plants stats."
   echo -e "\nSmart Plants webapp is running. You can check the logs with 'docker logs -f ${WEBAPP}'\n"
-  
+
 elif [ "$1" == 'start-reporter' ]; then
   # export api_key
   source sendgrid.env

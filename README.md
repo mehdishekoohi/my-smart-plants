@@ -138,6 +138,7 @@ This app is on its early development stage and more features are planned to be a
 * implementing database for configs, plants and readings
 * Individual plants reports for webapp
 * Visualize moisture level for webapp
-* Better email and webapp interface
+* Homepage for webapp
+* Edit configs via Webapp 
 * Implement wireless serial transceiver for Arduino 
 
