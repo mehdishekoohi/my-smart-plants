@@ -160,3 +160,8 @@ This app is on its early development stage and more features are planned to be a
 
 ### Email
 ![Email](help/images/email.png)
+
+
+## License
+
+Distributed under the terms of the MIT license, "My Smart Plants" is free and open source software.
