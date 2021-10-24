@@ -164,4 +164,4 @@ This app is on its early development stage and more features are planned to be a
 
 ## License
 
-Distributed under the terms of the MIT license, "My Smart Plants" is free and open source software.
+Distributed under the terms of the [MIT license](https://opensource.org/licenses/MIT), "My Smart Plants" is free and open source software.
