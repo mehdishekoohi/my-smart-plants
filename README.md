@@ -81,6 +81,15 @@ To configure the project modify the `config.ini` based on the followings:
 4. `moisture_alarm`: Notifications send when the moisture percentage goes under this value. Should be between 1 and 100.
 5. `minutes`: The Reporter application check the plants status based on this interval and send notification for those plants with moisture level less than `moisture_alarm`
 
+### Add and modify plants list
+Open `plants.csv` file and add, modify or delete the plants with their sensor index. For example:
+
+```csv
+index, name, location
+0, Rose, Living Room
+1, Aglaonema, Guest Room
+```
+
 ## Run the application
 
 ### Run the apps directly in shell
@@ -136,9 +145,16 @@ This app is on its early development stage and more features are planned to be a
 
 * Calibrating sensors
 * implementing database for configs, plants and readings
+* CRUD plants via API and Webapp
 * Individual plants reports for webapp
 * Visualize moisture level for webapp
 * Homepage for webapp
 * Edit configs via Webapp 
 * Implement wireless serial transceiver for Arduino 
 
+##Screenshots:
+####Webapp
+![WebApp](help/images/webapp.png)
+
+####Email
+![Email](help/images/email.png)
