@@ -153,8 +153,9 @@ This app is on its early development stage and more features are planned to be a
 * Implement wireless serial transceiver for Arduino 
 
 ##Screenshots:
-####Webapp
+
+###Webapp
 ![WebApp](help/images/webapp.png)
 
-####Email
+###Email
 ![Email](help/images/email.png)
