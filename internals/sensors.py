@@ -1,6 +1,9 @@
 import serial
 import json
 from time import sleep
+from internals.utils import get_acm
+
+acm = get_acm()
 
 
 def get_sensors_data() -> dict:
@@ -9,7 +12,7 @@ def get_sensors_data() -> dict:
     for i in range(1, 11):
         while True:
             sleep(1)
-            ser = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=2)
+            ser = serial.Serial(acm, baudrate=9600, timeout=2)
             try:
                 data = ser.readline().decode('utf-8').replace('\r\n', '').replace("'", '"')
             except ValueError:
