@@ -6,8 +6,6 @@ from internals.constants import plants_csv
 my_plants = get_plants_name_from_csv(plants_csv)
 host_ip = get_ip()
 
-print(f'Running app on "http://{host_ip}":5000')
-
 app = Flask(__name__)
 
 
@@ -34,4 +32,4 @@ def plant():
 
 
 if __name__ == '__main__':
-    app.run(host=get_ip(), port=5000, debug=True)
+    app.run(host=get_ip(), port=5000, debug=False)

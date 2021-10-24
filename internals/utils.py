@@ -4,7 +4,6 @@ from datetime import datetime
 import random
 import csv
 import socket
-import glob
 
 
 def get_plants_name_from_csv(csv_file):
@@ -118,12 +117,3 @@ def get_ip():
     ip = s.getsockname()[0]
     s.close()
     return ip
-
-
-def get_acm():
-    acm_list = glob.glob("/dev/ttyACM*")
-    if len(acm_list):
-        return acm_list[0]
-    else:
-        raise('Serial port not found. Check if the USB cable correctly connected to Arduino')
-        exit(2)

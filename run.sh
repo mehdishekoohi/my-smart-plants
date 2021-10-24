@@ -41,7 +41,7 @@ elif [ "$1" == 'start-reporter' ]; then
         -e SENDGRID_API_KEY="${SENDGRID_API_KEY}" \
         --network host -d -it \
         --entrypoint bash \
-        smart-plants  -c "python3 -u main.py"
+        smart-plants  -c "python3 -u reporter.py"
 
   REPORTER=$(docker ps -aqf "name=sp-reporter")
   echo -e "\nSmart Plants reporter is running. You can check the logs with 'docker logs -f ${REPORTER}'\n"

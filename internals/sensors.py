@@ -1,9 +1,15 @@
 import serial
 import json
 from time import sleep
-from internals.utils import get_acm
+import glob
 
-acm = get_acm()
+
+def get_acm():
+    acm_list = glob.glob("/dev/ttyACM*")
+    if len(acm_list):
+        return acm_list[0]
+    else:
+        raise 'Serial port not found. Check if the USB cable correctly connected to Arduino'
 
 
 def get_sensors_data() -> dict:
@@ -12,7 +18,7 @@ def get_sensors_data() -> dict:
     for i in range(1, 11):
         while True:
             sleep(1)
-            ser = serial.Serial(acm, baudrate=9600, timeout=2)
+            ser = serial.Serial(get_acm(), baudrate=9600, timeout=2)
             try:
                 data = ser.readline().decode('utf-8').replace('\r\n', '').replace("'", '"')
             except ValueError:
