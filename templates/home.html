@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Smart Plants | Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 1;
+        width: 80%;
+        border: 5px solid #ddd;
+      }
+
+      th, td {
+        text-align: left;
+        padding: 16px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>My Home Plants | Home page</h1>
+    <table class="center">
+    <tr>
+      <th>Plants Status</th>
+      <th>Graphs</th>
+      <th>Sensors</th>
+      <th>Plant Location</th>
+      <th>Settings</th>
+    </tr>
+      <tr>
+        <td><a href="/plants"><img src="{{ url_for('static', filename='homepage/plant.png') }}"></a></td>
+        <td><a href=#><img src="{{ url_for('static', filename='homepage/graph.png') }}"></a></td>
+        <td><a href=/sensors><img src="{{ url_for('static', filename='homepage/sensors.png') }}"></a></td>
+        <td><a href=#><img src="{{ url_for('static', filename='homepage/locations.png') }}"></a></td>
+        <td><a href=/setting><img src="{{ url_for('static', filename='homepage/setting.png') }}"></a></td>
+      </tr>
+
+
+    </table>
+  </body>
+</html>

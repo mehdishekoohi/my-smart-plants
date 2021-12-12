@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  mongodb:
+    container_name: my-smart-plants-db
+    image: mongo:bionic
+    restart: always
+    volumes:
+      - msp-data-mongo:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  msp-data-mongo:

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Smart Plants | Sensors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      table {
+        border-collapse: collapse;
+        border-spacing: 1;
+        width: 80%;
+        border: 5px solid #ddd;
+      }
+      form {
+        border-collapse: collapse;
+        border-spacing: 2;
+        width: 80%;
+        border: 5px solid #eee;
+      }
+      th, td {
+        text-align: left;
+        padding: 16px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>My Home Plants | Sensors</h1>
+  <hr>
+  <p>
+  <p>
+  <p>
+  <h3>Define or Add Sensor</h3>
+  <form method='POST' action="/sensors">
+        <p>Sensor Number (Index):
+        <select name="sensor_index" id="sensor_index">>
+          {% for sensor in available_sensors %}
+            <option value={{sensor}}>{{sensor}}</option>
+          {% endfor %}
+        </select></p>
+        <p>Wet Value: <input type="text" name='wet_value' value="{{default_wet}}" /></p>
+        <p>Dry Value: <input type="text" name='dry_value' value="{{default_dry}}" /></p>
+        <p><input type="submit" value="Add Sensor" /></p>
+
+  </form>
+  <p>
+  <p>
+  <hr>
+    <table class="center">
+    <tr>
+      <th>Sensor Number</th>
+      <th>Wet Value</th>
+      <th>Dry Value</th>
+    </tr>
+      {% for sensor in sensors %}
+      <tr>
+        <td>{{sensor['sensor_index']}}</td>
+        <td>{{sensor['wet_value']}}</td>
+        <td>{{sensor['dry_value']}}</td>
+        <td>Delete</td>
+      </tr>
+    {% endfor %}
+
+    </table>
+  </body>
+</html>

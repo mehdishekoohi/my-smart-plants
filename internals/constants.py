@@ -24,3 +24,8 @@ plant_line_number = 176
 # levels to indicate plants status
 levels = {'high': 60, 'mid': 40, 'low': 20, 'danger': 10}
 plants_csv = 'plants.csv'
+
+database_name = 'mspdb'
+username = 'admin'
+host = 'localhost'
+database_port = 27017
